@@ -1,0 +1,301 @@
+<!--pages/middle-page/middle-page.wxml-->
+<view>
+  <view style="height:65rpx;width:30%;margin-left:8%;font-size:45rpx;text-align:center;margin-top:30rpx;border-left: 5px solid #2c3036;border-bottom: 2.34rpx solid #f3f3f5;">查询结果</view> 
+<view scroll-y="{{true}}" style="margin-top:50rpx" >
+  <view wx:if="{{subject!=''}}">
+    <view wx:if="{{region==''}}">
+
+      <view wx:if="{{utlevel!=''}}">
+        <view wx:if="{{utlevel=='A+'}}">
+          <view wx:for="{{AP}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='A'}}">
+          <view wx:for="{{A}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='A-'}}">
+          <view wx:for="{{AM}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='B+'}}">
+          <view wx:for="{{BP}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='B'}}">
+          <view wx:for="{{B}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='B-'}}">
+          <view wx:for="{{BM}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='C+'}}">
+          <view wx:for="{{CP}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='C'}}">
+          <view wx:for="{{C}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='C-'}}">
+          <view wx:for="{{CM}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+      </view>
+
+      <view wx:if="{{utlevel==''}}">
+
+         <view wx:if="{{AP.length!=0}}" class="level" style="display:{{dis}}">A+</view> 
+  <view wx:for="{{AP}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}</view>
+</view>
+
+<view wx:if="{{A.length!=0}}" class="level" style="display:{{dis}}">A</view> 
+  <view wx:for="{{A}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}</view>
+</view>
+
+<view wx:if="{{AM.length!=0}}" class="level" style="display:{{dis}}">A-</view> 
+  <view wx:for="{{AM}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}</view>
+</view>
+
+<view wx:if="{{BP.length!=0}}" class="level" style="display:{{dis}}">B+</view> 
+  <view wx:for="{{BP}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}</view>
+</view>
+
+<view wx:if="{{B.length!=0}}" class="level" style="display:{{dis}}">B</view> 
+  <view wx:for="{{B}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}</view>
+</view>
+
+<view wx:if="{{BM.length!=0}}" class="level" style="display:{{dis}}">B-</view> 
+  <view wx:for="{{BM}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}</view>
+</view>
+
+<view wx:if="{{CP.length!=0}}" class="level" style="display:{{dis}}">C+</view> 
+  <view wx:for="{{CP}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}</view>
+</view>
+
+<view wx:if="{{C.length!=0}}" class="level" style="display:{{dis}}">C</view> 
+  <view wx:for="{{C}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}</view>
+</view>
+
+<view wx:if="{{CM.length!=0}}" class="level" style="display:{{dis}}">C-</view> 
+  <view wx:for="{{CM}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}</view>
+</view>
+      </view>
+
+         
+    </view>
+
+  </view>
+
+  <view wx:if="{{region!=''}}">
+    <view wx:if="{{subject==''}}">
+      <view wx:if="{{utlevel==''}}">
+        <view wx:for="{{utname}}" bindtap="gotoevaluate">
+          <view class='result-item' id="{{item.ut}}">{{item.ut}}</view>
+        </view>
+      </view>
+
+      <view wx:if="{{utlevel!=''}}">
+        <view wx:if="{{utlevel=='A+'}}">
+          <view wx:for="{{AP}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='A'}}">
+          <view wx:for="{{A}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='A-'}}">
+          <view wx:for="{{AM}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='B+'}}">
+          <view wx:for="{{BP}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='B'}}">
+          <view wx:for="{{B}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='B-'}}">
+          <view wx:for="{{BM}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='C+'}}">
+          <view wx:for="{{CP}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='C'}}">
+          <view wx:for="{{C}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='C-'}}">
+          <view wx:for="{{CM}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+      </view>
+    
+    </view>
+
+  </view>
+  
+
+  <view wx:if="{{subject!=''}}">
+    <view wx:if="{{region!=''}}">
+    <view wx:if="{{utlevel==''}}">
+    <view wx:if="{{AP.length!=0}}" class="level" style="display:{{dis}}">A+</view> 
+  <view wx:for="{{AP}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.region}}</view>
+</view>
+
+<view wx:if="{{A.length!=0}}" class="level" style="display:{{dis}}">A</view> 
+  <view wx:for="{{A}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.region}}</view>
+</view>
+
+<view wx:if="{{AM.length!=0}}" class="level" style="display:{{dis}}">A-</view> 
+  <view wx:for="{{AM}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.region}}</view>
+</view>
+
+<view wx:if="{{BP.length!=0}}" class="level" style="display:{{dis}}">B+</view> 
+  <view wx:for="{{BP}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.region}}</view>
+</view>
+
+<view wx:if="{{B.length!=0}}" class="level" style="display:{{dis}}">B</view> 
+  <view wx:for="{{B}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.region}}</view>
+</view>
+
+<view wx:if="{{BM.length!=0}}" class="level" style="display:{{dis}}">B-</view> 
+  <view wx:for="{{BM}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.region}}</view>
+</view>
+
+<view wx:if="{{CP.length!=0}}" class="level" style="display:{{dis}}">C+</view> 
+  <view wx:for="{{CP}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.region}}</view>
+</view>
+
+<view wx:if="{{C.length!=0}}" class="level" style="display:{{dis}}">C</view> 
+  <view wx:for="{{C}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.region}}</view>
+</view>
+
+<view wx:if="{{CM.length!=0}}" class="level" style="display:{{dis}}">C-</view> 
+  <view wx:for="{{CM}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.region}}</view>
+</view>
+    </view>
+
+    <view wx:if="{{utlevel!=''}}">
+        <view wx:if="{{utlevel=='A+'}}">
+          <view wx:for="{{AP}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='A'}}">
+          <view wx:for="{{A}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='A-'}}">
+          <view wx:for="{{AM}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='B+'}}">
+          <view wx:for="{{BP}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='B'}}">
+          <view wx:for="{{B}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='B-'}}">
+          <view wx:for="{{BM}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='C+'}}">
+          <view wx:for="{{CP}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='C'}}">
+          <view wx:for="{{C}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+
+        <view wx:if="{{utlevel=='C-'}}">
+          <view wx:for="{{CM}}" bindtap="gotoevaluate">
+      <view class='result-item' id="{{item.ut}}">{{item.ut}}\t{{item.subject}}\t{{item.eva_result}}</view>
+          </view>
+        </view>
+      </view>
+
+  </view>
+
+
+    </view>
+    
+
+</view>
+
+</view>
+
+

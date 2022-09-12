@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<head>
+</head>
+<body>
+  <div class="search-box">
+    <a class="search-button" bindtap="gotoevaluate">
+      <image class="search-img" src="reasources/img/search.png"></image>
+    </a>
+    <input class="search-txt" type="text" placeholder="搜点啥？" maxlength="20" bindinput="utinput"  value='{{keyvalue}}'></input>
+  </div>
+</body>

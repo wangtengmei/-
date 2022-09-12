@@ -1,0 +1,87 @@
+<view class="whole">
+  <view class="ut" style="position:fixed;top:0;">
+    <view class="imgoutside">
+      <image src="{{imgurl}}" class="utimg"></image>
+    </view>
+    
+  <view class="ut-name">{{title}}</view>
+  <!-- <image class="image" src="{{imgUrl}}" bindtap="clickMe"></image> -->
+  </view>
+  <scroll-view scroll-x="true" class="weui-navbar">
+ <block wx:for-items="{{tabs}}">
+ <view id="{{index}}" class="{{activeIndex == index ?'item_on':''}} default-item" bindtap="tabClick" style="width:{{tabW}}px">
+ {{item}}
+ </view>
+ </block>
+ <view class="weui-navbar-slider" style="transform:translateX({{slideOffset}}px);"></view>
+</scroll-view>
+<view class="rec" />
+<swiper style="height: {{clientHeight?clientHeight+'px':'auto'}}" current="{{activeIndex}}" class="swiper-box" duration="100" bindchange="bindChange">
+ <swiper-item class="swiper-item">
+  <scroll-view scroll-y="{{true}}" style="height: 936rpx" scroll-top="{{scrolltop}}">
+ <view class="slide-view">
+   <!-- <view class="allinfo"> -->
+    <!-- <view class="title">
+        <text>详细信息</text>
+      </view> -->
+      <view style="margin-bottom:-100rpx" wx:for="{{info}}">
+        <view class="utinfo">
+          <text selectable='true' >\n\n高校层次：{{item.level}}\n</text>
+          <text selectable='true' >高校类型：{{item.type}}\n</text>
+          <text selectable='true' >高校地区：{{item.region}}\n</text>
+          <text selectable='true' >招生办电话：{{item.tel}}\n</text>
+          <text selectable='true' >学校官网：{{item.website}}\n</text>
+          <!-- <button style="color:blue; font-size:15px;text-decoration:underline" id="{{item.website}}" bindtap="guanwang">{{item.website}}></button> -->
+        </view>
+      </view>
+   <!-- </view> -->
+   <button bindtap="gotoshow" class="btn1">评估结果展示</button>
+ </view>
+ </scroll-view>
+ </swiper-item>
+ <swiper-item class="swiper-item">
+  <scroll-view scroll-y="{{true}}" style="height: 936rpx" scroll-top="{{scrolltop}}">
+    <view class="slide-view">
+   <view>
+    <view class='allMessage'>
+      <view class="title">
+        <text>全部评论</text>
+      </view>
+      <view class='tab-content'>
+        <view class='comment-list'>
+ 
+        <!-- <view>{{comment}}</view> -->
+          <!-- 读取数据显示全部评论 -->
+          <view class='comment-item' wx:for="{{comment}}">
+            <!-- <view>{{item}}</view> -->
+            <view class='comment-person'>
+              <image class='comment-person-avatar' src='{{item.photo}}'></image>
+              <view class='comment-person-info ellipsis'>
+                <view class='comment-person-name ellipsis'>{{item.id}}</view>
+                <view class='comment-time ellipsis'>{{item.date}}</view>
+              </view>
+            </view>
+            <view class='comment-text'>{{item.content}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+   </view>
+ </view>
+  </scroll-view>
+ 
+ </swiper-item>
+</swiper>
+<view style="display:{{footdisp}}">
+      <!-- 评论 -->
+    <!--textarea-->
+    <view class="message">
+      <form bindsubmit="formSubmit" class='form'>
+        <input  bindconfirm="search" type="text" cursor-spacing="10" name="liuyantext" placeholder='带上你的专业说一说吧~' value='{{keyValue}}' class="input-style" />
+        <button wx:if="{{!hasUserInfo}}" class="btn" bindtap="getUserProfile">发送</button>
+        <button wx:if="{{hasUserInfo}}" formType="submit" class="btn">发送</button>
+      </form>
+    </view>
+</view>
+</view>
+

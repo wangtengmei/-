@@ -1,0 +1,4 @@
+<!--pages/website/website.wxml-->
+<web-view src="{{info}}"></web-view>
+
+

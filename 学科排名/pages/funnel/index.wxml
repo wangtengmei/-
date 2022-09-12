@@ -1,0 +1,54 @@
+<view class="container" wx:if="{{!isdetail}}">
+     <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ecBar }}" ></ec-canvas>
+  
+<!-- 弹窗遮罩层 -->
+</view>
+<view class="text1"></view>
+<form bindsubmit="formSubmit">
+<!--提交按钮  -->
+<view class="btn">
+<button wx:if="{{!isdetail}}" formType="submit">详细信息</button>    
+</view>
+
+</form>
+<view wx:if="{{isShowCouponPopUp}}" class="popover-mask-layer"></view>
+		<!-- 优惠劵弹窗 //用hidden而不用wx:if原因是hidden条件不成立时候也会加载图片-->
+		<view hidden="{{!isShowCouponPopUp}}" class="coupon-pop-up" catchtouchmove="onPreventTouchMove" animation="{{animationData}}">
+			<view class="body">
+				<view class="top-images" wx:if="{{isdetail}}">
+					<!-- 顶部gif背景图 //监听图片加载完后再开启弹窗-->
+					<image bindload="openTheCouponPopUp" src="{{topImages}}"></image>
+				</view>
+				<view class="mid-coupons">
+					<view class="content">
+						<scroll-view scroll-y="true">
+							<block wx:for="{{couponArr}}" for-index="index" wx:key="index">
+								<view class="row">
+									<view class="coupon">
+										
+										<view class="mid">
+											<view>{{item.subject}}</view>
+											<!-- <view>{{item.CouponTypeName}}</view> -->
+										</view>
+										<view class="right">
+											<view><text>{{item.eva_result}}</text></view>
+											
+											
+										</view>
+									</view>
+								</view>
+							</block>
+						</scroll-view>
+					</view>
+					<!-- <view class="bottom-get-btn">
+						<view bindtap="getAllCoupons">全部领取</view>
+					</view> -->
+				</view>
+				<view class="bottom-close-btn">
+					<view class="bottom-close-btn-child" bindtap="closeTheCouponPopUp">
+						<image src="{{closeBtnImages}}"></image>
+					</view>
+				</view>
+			</view>
+    </view>
+

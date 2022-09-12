@@ -1,0 +1,77 @@
+<!--index.wxml-->
+<head>
+</head>
+<body>
+  <div class="search-box">
+    <a class="search-button" bindtap="gotoevaluate">
+      <image class="search-img" src="reasources/img/search.png"></image>
+    </a>
+    <input class="search-txt" type="text" placeholder="搜学校" maxlength="20" bindinput="utinput"  value='{{keyvalue}}'  bindconfirm="search" confirm-type="search" cursor-spacing="30"></input>
+  </div>
+  <div>
+  <image class="postion_9" src="http://m.qpic.cn/psc?/V12RQMJM3f6Gnx/45NBuzDIW489QBoVep5mcQRKKynG6yEw.G4vPOSA74SErCiUqL1O9oYag2vgdUobfvV7XEDUAF6Odl18PNc.krt.ZuEy3LnBCZYEdyuIJ*Q!/b&bo=qwKgAwAAAAADNxg!&rf=viewer_4"></image>
+</div>
+
+<div>
+  <div>
+    <image mode="scaleToFill" class="UI_book_1 postion_1 {{change_pages==1?'pages_roll':''}}" src="reasources/UI_img/UI_book_1.png"></image>
+  </div>
+  <div>
+    <image mode="scaleToFill" class="UI_book_2 postion_3" src="http://m.qpic.cn/psc?/V12RQMJM3f6Gnx/45NBuzDIW489QBoVep5mcaDIw1vQCCiVzkg9JToXI6nwCYjK.B3b4zGVFc*6aF03Owppk.pbrxe5*IWtoMfifeIahCx3yXXFQe425*DZB60!/b&bo=OARiDAAAAAADRzA!&rf=viewer_4"></image>
+  </div>
+  <div>
+    <image mode="scaleToFill" class="UI_book_2 postion_3" src="http://m.qpic.cn/psc?/V12RQMJM3f6Gnx/45NBuzDIW489QBoVep5mcXCY0Y4WHgjqk9kw9bINX.sdakXKh*6A96SqTi5hyYxdqEqa3Cp1mhPlyK4q2QOrAqgtrVQzZ1861ex5wQRzYxM!/b&bo=OARiDAAAAAADF2A!&rf=viewer_4"></image>
+  </div>
+  <div>
+    <figure class="animate">
+      <picker bindchange="areaPickerChange" value="{{index}}" range="{{province}}" mode="selector">
+        <image class="bookmark_1 postion_2" src="reasources/UI_img/bookmark_1.png"></image>
+        <text class="postion_6" wx:if="{{index!=-1}}">
+          {{province[index]}}
+        </text>
+        <text class="postion_6" wx:if="{{index==-1}}">
+          地区
+        </text>
+      </picker>
+    </figure>
+  </div>
+  <div>
+    <figure class="animate">
+      <picker bindcolumnchange="majorcolumnPickerChange" value="{{majorindex}}" range="{{major}}" mode="multiSelector">
+        <image class="bookmark_2 postion_4" src="reasources/UI_img/bookmark_2.png"></image>
+        <text class="postion_7" wx:if="{{majorindex[1]!=-1}}" id="roll">
+          {{major[1][majorindex[1]]}}
+        </text>
+        <text class="postion_7" wx:if="{{majorindex[1]==-1}}">
+          学科
+        </text>
+      </picker>
+    </figure>
+  </div>
+  <div>
+    <figure class="animate">
+      <picker bindchange="levelPickerChange" value="{{levelindex}}" range="{{level}}" mode="selector">
+        <image class="bookmark_3 postion_5" src="reasources/UI_img/bookmark_3.png"></image>
+        <text class="postion_8" wx:if="{{levelindex!=-1}}">
+          {{level[levelindex]}}
+        </text>
+        <text class="postion_8" wx:if="{{levelindex==-1}}">
+          评级
+        </text>
+      </picker>
+    </figure>
+  </div>
+</div>
+<div class="touch_postion_1" bindtouchstart="touchstart" bindtouchend="touchend">
+</div>
+<div class="touch_postion_2" bindtouchstart="touchstart" bindtouchend="touchend">
+</div>
+<div class="touch_postion_3" bindtouchstart="touchstart" bindtouchend="touchend">
+</div>
+<div class="touch_postion_4" bindtouchstart="touchstart" bindtouchend="touchend">
+</div>
+<div class="touch_postion_5" bindtouchstart="touchstart" bindtouchend="touchend">
+</div>
+</body>
+
+

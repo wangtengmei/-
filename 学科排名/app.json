@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index1/index",
+    "pages/middle-page/middle-page",
+    "pages/evaluate/evaluate",
+    "pages/funnel/index",
+    "pages/search2/search2",
+    "pages/utils/utils",
+    "pages/website/website",
+    "pages/ec-canvas/ec-canvas"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#F7EED6",
+    "navigationBarTitleText": "学科排名",
+    "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "black"
+    },
+
+  "sitemapLocation": "sitemap.json"
+}

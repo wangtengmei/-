@@ -1,0 +1,60 @@
+/* pages/middle-page/middle-page.wxss */
+page{
+  background: url("http://m.qpic.cn/psc?/V12RQMJM3f6Gnx/45NBuzDIW489QBoVep5mccu4CFhoXTIwpzwKAaGf5ujooFB6J*yYc2DKdTVjwRNvgKDJ*NLtje3Q02TStrTyfQ5U*5whfGxcslWrvcWGdtY!/b&bo=OARhBgAAAAADF2k!&rf=viewer_4");
+  background-size: cover;
+
+   background-position: top;
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   color: #000;
+   padding: 10rpx 0;
+}
+.result-item{
+  display: flex;
+  flex-direction: row;
+  padding: 12rpx;
+  margin-bottom: 15rpx;
+  background-color: rgba(222, 234, 245, 0.5);
+  border: 10rpx double rgba(190, 220, 238, 0.3);
+  border-radius: 60rpx;
+  margin-bottom: 20rpx;
+  margin-left: 70rpx;
+  margin-right: 70rpx;
+  /* width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 37.44rpx 66rpx ;
+  border-bottom: 3rpx solid #f3f3f5; */
+
+  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: left;
+  line-height: 90rpx;
+  width: 90%;
+  height: 90rpx;
+  background-color: rgba(190, 220, 238, 0.3);
+  border-radius: 46.8rpx;
+  margin-top: 20rpx;
+  margin-left: 374.4rpx;
+  transform: translate(-50%,-50%);
+
+  backdrop-filter: blur(7.02rpx);
+  border-left: 4.68rpx solid rgba(255,255,255,.3);
+  border-top: 4.68rpx solid rgba(255,255,255,.3);
+  box-shadow: 4.68rpx 4.68rpx 23.4rpx rgba(0, 0, 0,.2); */
+}
+
+.level{
+  height:60rpx;
+  background-color: #3498db;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.15);
+  width: 20%;
+  margin-left:40%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50rpx;
+  color: white;
+  font-weight: bold;
+}
